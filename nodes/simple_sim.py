@@ -19,8 +19,8 @@ class Sim(object):
         self.cam_point_pub = rospy.Publisher('/cam_points', Marker, queue_size=10)
         
         
-        self.x = 0;
-        self.y = 0;
+        self.x = 7;
+        self.y = 7;
         self.z = 0;
         self.theta = 0;
         self.t_init = rospy.Time.now().to_sec();
@@ -67,7 +67,7 @@ class Sim(object):
         if(data.x > .5):
             print("PAST MAX VEL: %f",data.x)
             data.x = .5;
-        if(data.theta > .2):
+        if(data.theta > .3):
             print("PAST MAX OMEGA: %f", data.theta)
             data.theta = .2;
         self.x += data.x*dt*math.cos(self.theta);
