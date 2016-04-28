@@ -67,9 +67,9 @@ class Sim(object):
         if(data.x > .5):
             print("PAST MAX VEL: %f",data.x)
             data.x = .5;
-        if(data.theta > .3):
+        if(data.theta > 1):
             print("PAST MAX OMEGA: %f", data.theta)
-            data.theta = .2;
+            data.theta = 1;
         self.x += data.x*dt*math.cos(self.theta);
         self.y += data.x*dt*math.sin(self.theta);
         self.theta += data.theta*dt;
